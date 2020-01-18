@@ -24,7 +24,8 @@ Project 5: Part 1 / 4
 
  Wait for my code review.
  */
-#include "string"
+#include <string>
+#include <stdlib.h> 
 #include <iostream>
 /*
  copied UDT 1:
@@ -45,27 +46,6 @@ struct Guitar
     void bodyType();
     void printGuitar();
 };
-
-struct GuitarChord
-{
-    int scaleDegree;
-    float number{2.f};
-
-    GuitarChord() : scaleDegree(6) {}
-    ~GuitarChord()
-    {
-        std::cout << "End of Scale Degree" << std::endl;
-    }
-
-    void printGuitarChord();
-};
-
-void GuitarChord::printGuitarChord()
-{
-    std::cout << "Scale Degree of Chord is the " << scaleDegree << " degree" << std::endl;
-
-    std::cout << "Chord has " << scaleDegree / number << " notes" << std::endl;
-}
 
 void Guitar::bodyType()
 {
@@ -144,27 +124,6 @@ void NeuroPath::printNeuroPath()
     void printDog();   
 };
 
-struct Puppy
-{
-    int puppyWeight;
-    float puppyColor {100.f};
-
-    Puppy() : puppyWeight(10) {}
-    ~Puppy()
-    {
-        std::cout << "End of Puppy" <<  std::endl;
-    }
-
-    void printPuppy();
-};
-
-void Puppy::printPuppy()
-{
-    std::cout << "Puppy weighs: " << puppyWeight << " Oz" << std::endl;
-
-    std::cout << "Color of puppy is: " << puppyColor << "% Grey" << std::endl; 
-}
-
 void Dog::dogBreed()
 {
     for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies)
@@ -187,81 +146,49 @@ void Dog::printDog()
  new UDT 4:
  */
 
-struct DBG
+struct Puppy
 {
-    int d;
-    float generate{0.0};
-    bool menuWorks = true;
-        
-    DBG() : d(0) { }
-    ~DBG()
+    Puppy() 
     {
-        std::cout << "End of DBG" << std::endl;
+        std::cout << "You have a puppy!" << std::endl;
     }
-    
-    void testFunction();
-    void printDBG();    
+    ~Puppy()
+    {
+        std::cout << "Puppy died of dysentery" << std::endl;
+    }
+
+    Dog puppyWeight;
 };
 
-void DBG::testFunction()
+void printPuppy()
 {
-    while( d < 3)
-    if(menuWorks)
-    {
-        std::cout << "DBG " << d << " errors" << std::endl;
-        d += 1;
-    }
-    else
-    {
-        std::cout << "DBG " << generate + 1 << " errors" << std::endl;
-        d += 1; 
-    }
-}
-
-void DBG::printDBG()
-{
-    return testFunction();
+    Puppy puppy;
 }
 
 /*
  new UDT 5:
  */
 
- struct Learn
+ struct GuitarChord
 {
-    int l;
-    bool isLearning = true;
-    float crazyStuff{ 500.1f};
-        
-    Learn() : l(0) { }
-    ~Learn()
+    GuitarChord() 
     {
-        std::cout << "End of Class" << std::endl;
+        std::cout << "Guitar Chord Placed!" << std::endl;
     }
-    
-    void underStood();
-    void printLearn();       
+    ~GuitarChord()
+    {
+        std::cout << "End of Chord Progression" << std::endl;
+    }
+
+    Guitar scaleDegree;
 };
 
-void Learn::underStood()
+void printGuitarChord()
 {
-    while(l < 3)
-    if(isLearning)
-    {
-        std::cout << "Learn " << l + 10 << " new things" << std::endl;
-        l +=1;
-    }
-    else
-    {
-        std::cout << "Learn " << crazyStuff << " new things" << std::endl;
-        l +=1;
-    }
+    GuitarChord guitarChord;
 }
 
-void Learn::printLearn()
-{
-    return underStood();
-}
+
 
 
 
@@ -275,7 +202,7 @@ int main()
     guitar.printGuitar();
 
     GuitarChord chord;
-    chord.printGuitarChord();
+    std::cout << "Guitar Playing" << std::endl;
     
     NeuroPath neuroPath;
     neuroPath.printNeuroPath();
@@ -284,11 +211,5 @@ int main()
     dog.printDog();
 
     Puppy pup;
-    pup.printPuppy();
-
-    DBG dbg;
-    dbg.printDBG();
-    
-    Learn learn;
-    learn.printLearn();
+    std::cout << "Puppy was made" << std::endl;
 }
