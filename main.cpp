@@ -45,7 +45,7 @@ struct Guitar
         std::cout << "End of Guitar" << std::endl;
     }
     
-    void bodyType();
+    void bodyType(); FIXME: bodyType isn't an action, it's a noun.  change the name.
     void printGuitar();
 };
 
@@ -66,7 +66,7 @@ void Guitar::bodyType()
 
 void Guitar::printGuitar()
 {
-        return bodyType();
+    return bodyType(); FIXME this is weird to read, because bodyType() doesn't return anything.
 }
  
 
@@ -86,7 +86,7 @@ struct NeuroPath
         std::cout << "End of Neuro Path" << std::endl;
     }
     
-    void neurons();
+    void neurons(); FIXME neurons isn't an action, it's a noun. Change the name
     void printNeuroPath();
 };
 
@@ -107,7 +107,7 @@ void NeuroPath::neurons()
 
 void NeuroPath::printNeuroPath()
 {
-    return neurons();
+    return neurons(); FIXME this is weird to read, because neurons() doesn't return anything.
 }
 
 
@@ -126,7 +126,7 @@ void NeuroPath::printNeuroPath()
         std::cout << "End of Breeding" << std::endl;
     }
     
-    void dogBreed();
+    void dogBreed(); FIXME dogBreed() isn't an action, it's a noun
     void printDog();   
 };
 
@@ -147,7 +147,7 @@ void Dog::dogBreed()
 
 void Dog::printDog()
 {
-    return dogBreed();
+    return dogBreed(); FIXME this is weird to read because dogBreed() doesn't return anything
 }
 
 /*
