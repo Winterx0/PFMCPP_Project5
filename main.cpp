@@ -24,9 +24,11 @@ Project 5: Part 1 / 4
 
  Wait for my code review.
  */
+
 #include <string>
 #include <stdlib.h> 
 #include <iostream>
+
 /*
  copied UDT 1:
  */
@@ -49,14 +51,16 @@ struct Guitar
 
 void Guitar::bodyType()
 {
-    for(steelNeck = 0; steelNeck < 3; ++steelNeck) FIXME add { } around your for loop bodies
-    if(isElectricGuitar)
+    for(steelNeck = 0; steelNeck < 3; ++steelNeck)
     {
-        std::cout << "Guitar Key: " << steelNeck + tuneKey << std::endl;
-    }
-    else
-    {
-        std::cout << "Hz: " << inTune << std::endl;
+        if(isElectricGuitar)
+        {
+            std::cout << "Guitar Key: " << steelNeck + tuneKey << std::endl;
+        }
+        else
+        {
+            std::cout << "Hz: " << inTune << std::endl;
+        }
     }
 }
 
@@ -88,14 +92,16 @@ struct NeuroPath
 
 void NeuroPath::neurons()
 {
-    for(neuroPlasticity = 0; neuroPlasticity < 3; ++neuroPlasticity) FIXME add { } around your for loop bodies
-    if( isSmart )
-    {
-        std::cout << "Neuro Path " << neuroPlasticity << "% Cognitive Thought" << std::endl;
-    }
-    else
-    {
-        std::cout << "Neuro Path " << genericThought << "% Cognitive Thought" << std::endl;
+    for(neuroPlasticity = 0; neuroPlasticity < 3; ++neuroPlasticity)
+    { 
+        if( isSmart )
+        {
+            std::cout << "Neuro Path " << neuroPlasticity << "% Cognitive Thought" << std::endl;
+        }
+        else
+        {
+            std::cout << "Neuro Path " << genericThought << "% Cognitive Thought" << std::endl;
+        }
     }
 }
 
@@ -126,14 +132,16 @@ void NeuroPath::printNeuroPath()
 
 void Dog::dogBreed()
 {
-    for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies) FIXME add { } around your for loop bodies
-    if(isApuppy)
-    {
-        std::cout << "Dog is " << litter << "% Chihuahua" << std::endl;
-    }
-    else
-    {
-        std::cout << "Dog is " << manyPuppies << "% Pitbull" << std::endl;
+    for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies)
+    { 
+        if(isApuppy)
+        {
+            std::cout << "Dog is " << litter << "% Chihuahua" << std::endl;
+        }
+        else
+        {
+            std::cout << "Dog is " << manyPuppies << "% Pitbull" << std::endl;
+        }
     }
 }
 
