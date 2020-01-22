@@ -34,6 +34,7 @@ Project 5: Part 1 / 4
  */
 struct Guitar
 {
+    int pickUps();
     int steelNeck;
     float inTune { 440.0f };
     float tuneKey { 4.0f };
@@ -45,11 +46,12 @@ struct Guitar
         std::cout << "End of Guitar" << std::endl;
     }
     
-    void bodyType(); FIXME: bodyType isn't an action, it's a noun.  change the name.
+    void tuning(); 
+    //FIXME: bodyType isn't an action, it's a noun.  change the name.
     void printGuitar();
 };
 
-void Guitar::bodyType()
+void Guitar::tuning()
 {
     for(steelNeck = 0; steelNeck < 3; ++steelNeck)
     {
@@ -63,12 +65,16 @@ void Guitar::bodyType()
         }
     }
 }
-
 void Guitar::printGuitar()
 {
-    return bodyType(); FIXME this is weird to read, because bodyType() doesn't return anything.
+    std::cout << "Guitar Data" << std::endl;
 }
- 
+
+int Guitar::pickUps()
+{
+    return 0;
+}
+
 
 /*
  copied UDT 2:
@@ -76,6 +82,7 @@ void Guitar::printGuitar()
 
 struct NeuroPath
 {
+    int brain();
     int neuroPlasticity;
     float genericThought { 500.0f };
     bool isSmart = false;
@@ -86,11 +93,12 @@ struct NeuroPath
         std::cout << "End of Neuro Path" << std::endl;
     }
     
-    void neurons(); FIXME neurons isn't an action, it's a noun. Change the name
+    void thinking(); 
+    //FIXME neurons isn't an action, it's a noun. Change the name
     void printNeuroPath();
 };
 
-void NeuroPath::neurons()
+void NeuroPath::thinking()
 {
     for(neuroPlasticity = 0; neuroPlasticity < 3; ++neuroPlasticity)
     { 
@@ -107,7 +115,12 @@ void NeuroPath::neurons()
 
 void NeuroPath::printNeuroPath()
 {
-    return neurons(); FIXME this is weird to read, because neurons() doesn't return anything.
+    std::cout << "Brain Data" << std::endl;
+}
+
+int NeuroPath::brain()
+{
+    return 0;
 }
 
 
@@ -116,6 +129,7 @@ void NeuroPath::printNeuroPath()
  */
  struct Dog
 {
+    int pupper();
     int manyPuppies;
     float litter { 100.0f };
     bool isApuppy = false;
@@ -126,11 +140,12 @@ void NeuroPath::printNeuroPath()
         std::cout << "End of Breeding" << std::endl;
     }
     
-    void dogBreed(); FIXME dogBreed() isn't an action, it's a noun
+    void makePuppies(); 
+    //FIXME dogBreed() isn't an action, it's a noun
     void printDog();   
 };
 
-void Dog::dogBreed()
+void Dog::makePuppies()
 {
     for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies)
     { 
@@ -147,7 +162,12 @@ void Dog::dogBreed()
 
 void Dog::printDog()
 {
-    return dogBreed(); FIXME this is weird to read because dogBreed() doesn't return anything
+    std::cout << "Dog Data" << std::endl;
+}
+
+int Dog::pupper()
+{
+    return 0;
 }
 
 /*
@@ -201,17 +221,17 @@ int main()
 {
     std::cout << "Print:" << std::endl;;
     
-    Guitar guitar;
-    guitar.printGuitar();
+    Guitar g;
+    g.printGuitar();
 
     GuitarChord chord;
     std::cout << "Guitar Playing" << std::endl;
     
-    NeuroPath neuroPath;
-    neuroPath.printNeuroPath();
+    NeuroPath n;
+    n.printNeuroPath();
     
-    Dog dog;
-    dog.printDog();
+    Dog d;
+    d.printDog();
 
     Puppy pup;
     std::cout << "Puppy was made" << std::endl;
