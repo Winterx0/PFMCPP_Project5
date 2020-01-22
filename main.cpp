@@ -127,7 +127,7 @@ int NeuroPath::brain()
 /*
  copied UDT 3:
  */
- struct Dog
+struct Dog
 {
     int pupper();
     int manyPuppies;
@@ -197,7 +197,7 @@ void printPuppy()
  new UDT 5:
  */
 
- struct GuitarChord
+struct GuitarChord
 {
     GuitarChord() 
     {
