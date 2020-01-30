@@ -52,6 +52,7 @@ namespace example
 #include <iostream>
 
 
+
 /*
  copied UDT 1:
  */
@@ -70,7 +71,6 @@ struct Guitar
     }
     
     void tuning(); 
-    //FIXME: bodyType isn't an action, it's a noun.  change the name.
     void printGuitar();
 };
 
@@ -80,11 +80,11 @@ void Guitar::tuning()
     {
         if(isElectricGuitar)
         {
-            std::cout << "Guitar Key: " << steelNeck + tuneKey << std::endl;
+            std::cout << "Guitar Key: " << this->steelNeck + this->tuneKey << std::endl;
         }
         else
         {
-            std::cout << "Hz: " << inTune << std::endl;
+            std::cout << "Hz: " << this->inTune << std::endl;
         }
     }
 }
@@ -97,6 +97,7 @@ int Guitar::pickUps()
 {
     return 0;
 }
+
 
 
 /*
@@ -117,7 +118,6 @@ struct NeuroPath
     }
     
     void thinking(); 
-    //FIXME neurons isn't an action, it's a noun. Change the name
     void printNeuroPath();
 };
 
@@ -127,11 +127,11 @@ void NeuroPath::thinking()
     { 
         if( isSmart )
         {
-            std::cout << "Neuro Path " << neuroPlasticity << "% Cognitive Thought" << std::endl;
+            std::cout << "Neuro Path " << this->neuroPlasticity << "% Cognitive Thought" << std::endl;
         }
         else
         {
-            std::cout << "Neuro Path " << genericThought << "% Cognitive Thought" << std::endl;
+            std::cout << "Neuro Path " << this->genericThought << "% Cognitive Thought" << std::endl;
         }
     }
 }
@@ -145,6 +145,7 @@ int NeuroPath::brain()
 {
     return 0;
 }
+
 
 
 /*
@@ -164,7 +165,6 @@ struct Dog
     }
     
     void makePuppies(); 
-    //FIXME dogBreed() isn't an action, it's a noun
     void printDog();   
 };
 
@@ -174,11 +174,11 @@ void Dog::makePuppies()
     { 
         if(isApuppy)
         {
-            std::cout << "Dog is " << litter << "% Chihuahua" << std::endl;
+            std::cout << "Dog is " << this->litter << "% Chihuahua" << std::endl;
         }
         else
         {
-            std::cout << "Dog is " << manyPuppies << "% Pitbull" << std::endl;
+            std::cout << "Dog is " << this->manyPuppies << "% Pitbull" << std::endl;
         }
     }
 }
@@ -192,6 +192,8 @@ int Dog::pupper()
 {
     return 0;
 }
+
+
 
 /*
  new UDT 4:
@@ -216,6 +218,8 @@ void printPuppy()
     Puppy puppy;
 }
 
+
+
 /*
  new UDT 5:
  */
@@ -239,6 +243,8 @@ void printGuitarChord()
     GuitarChord guitarChord;
 }
 
+
+
 #include <iostream>
 int main()
 {
@@ -249,13 +255,14 @@ int main()
     g.printGuitar();
 
     GuitarChord chord;
-    std::cout << "Guitar Playing" << std::endl;
+    std::cout << "Guitar Playing Ended" << std::endl;
     
     NeuroPath n;
     n.printNeuroPath();
     
     Dog d;
     d.printDog();
+    std::cout << "End of Dog Data" << std::endl;
 
     Puppy pup;
     std::cout << "Puppy was made" << std::endl;
