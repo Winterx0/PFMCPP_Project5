@@ -23,7 +23,6 @@ Create a branch named Part2
 
  Wait for my code review.
  */
-
 /*
  example:
  */
