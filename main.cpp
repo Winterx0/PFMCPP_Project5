@@ -266,6 +266,8 @@ int main()
     g.tuning();
     g.guitarFunc();
 
+    std::cout << "Guitar function is active for the " << g.steelNeck + 1 << " scale degree with " << g.inTune << "Hz at Octave " << g.tuneKey << std::endl;
+
     GuitarChord guitarChord;
     std::cout << "Guitar Playing Ended" << std::endl;
     std::cout << " " << std::endl; //spacer
@@ -274,14 +276,22 @@ int main()
     n.printNeuroPath();
     n.thinking();
     n.neuroFunc();
+
+    std::cout << "Cognitive Ability is at " << n.neuroPlasticity << "%" << " with an IQ of " << n.genericThought / 4 << std::endl;
+
     std::cout << "End of Brain Data" << std::endl;
+
     std::cout << " " << std::endl; //spacer
     
     Dog d;
     d.printDog();
     d.makePuppies();
     d.dogFunc();
+    
+    std::cout << "Dog is loading at " << d.manyPuppies + 100 << "% and is " << d.litter << "% ready to load puppies" << std::endl;
+
     std::cout << "End of Dog Data" << std::endl;
+
     std::cout << " " << std::endl; //spacer
 
     Puppy puppy;
