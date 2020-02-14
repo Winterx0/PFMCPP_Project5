@@ -23,7 +23,7 @@ Create a branch named Part2
 
  Wait for my code review.
  */
-
+ 
 /*
  example:
  */
@@ -52,6 +52,7 @@ namespace example
 #include <iostream>
 
 
+
 /*
  copied UDT 1:
  */
@@ -68,9 +69,10 @@ struct Guitar
     {
         std::cout << "End of Guitar" << std::endl;
     }
-    
+
+    void guitarFunc() {std::cout << "Guitar function is active for the " << this->steelNeck + 1 << " scale degree with " << this->inTune << "Hz at Octave " << this->tuneKey << std::endl;}
+
     void tuning(); 
-    //FIXME: bodyType isn't an action, it's a noun.  change the name.
     void printGuitar();
 };
 
@@ -80,23 +82,25 @@ void Guitar::tuning()
     {
         if(isElectricGuitar)
         {
-            std::cout << "Guitar Key: " << steelNeck + tuneKey << std::endl;
+            std::cout << "Guitar Key: " << this->steelNeck + this->tuneKey << std::endl;
         }
         else
         {
-            std::cout << "Hz: " << inTune << std::endl;
+            std::cout << "Hz: " << this->inTune << std::endl;
         }
     }
 }
 void Guitar::printGuitar()
 {
     std::cout << "Guitar Data" << std::endl;
+    std::cout << "Guitar is at scale degree " << this->steelNeck + 1 << " at " << this->inTune << "Hz" << " in Octave " << this->tuneKey << std::endl;
 }
 
 int Guitar::pickUps()
 {
     return 0;
 }
+
 
 
 /*
@@ -115,9 +119,10 @@ struct NeuroPath
     {
         std::cout << "End of Neuro Path" << std::endl;
     }
+
+    void neuroFunc() {std::cout << "Cognitive Ability is at " << this->neuroPlasticity << "%" << " with an IQ of " << this->genericThought / 4 << std::endl;}
     
     void thinking(); 
-    //FIXME neurons isn't an action, it's a noun. Change the name
     void printNeuroPath();
 };
 
@@ -127,11 +132,11 @@ void NeuroPath::thinking()
     { 
         if( isSmart )
         {
-            std::cout << "Neuro Path " << neuroPlasticity << "% Cognitive Thought" << std::endl;
+            std::cout << "Neuro Path " << this->neuroPlasticity / 2 << "% Cognitive Thought" << std::endl;
         }
         else
         {
-            std::cout << "Neuro Path " << genericThought << "% Cognitive Thought" << std::endl;
+            std::cout << "Neuro Path " << this->genericThought / 3 << "% Cognitive Thought" << std::endl;
         }
     }
 }
@@ -139,12 +144,14 @@ void NeuroPath::thinking()
 void NeuroPath::printNeuroPath()
 {
     std::cout << "Brain Data" << std::endl;
+    std::cout << "Cognitive Ability is at " << this->neuroPlasticity + 100/2 << "%" << " with an IQ of " << this->genericThought << std::endl;
 }
 
 int NeuroPath::brain()
 {
     return 0;
 }
+
 
 
 /*
@@ -162,9 +169,10 @@ struct Dog
     {
         std::cout << "End of Breeding" << std::endl;
     }
+
+    void dogFunc() {std::cout << "Dog is loading at " << this->manyPuppies + 100 << "% and is " << this->litter << "% ready to load puppies" << std::endl;}
     
     void makePuppies(); 
-    //FIXME dogBreed() isn't an action, it's a noun
     void printDog();   
 };
 
@@ -174,11 +182,11 @@ void Dog::makePuppies()
     { 
         if(isApuppy)
         {
-            std::cout << "Dog is " << litter << "% Chihuahua" << std::endl;
+            std::cout << "Dog is " << this->litter << "% Chihuahua" << std::endl;
         }
         else
         {
-            std::cout << "Dog is " << manyPuppies << "% Pitbull" << std::endl;
+            std::cout << "Dog is " << this->manyPuppies << "% Pitbull" << std::endl;
         }
     }
 }
@@ -186,12 +194,15 @@ void Dog::makePuppies()
 void Dog::printDog()
 {
     std::cout << "Dog Data" << std::endl;
+    std::cout << "Dog is loading at " << this->manyPuppies + 100 << "% and is " << this->litter / 2 << "% ready to load puppies" << std::endl;
 }
 
 int Dog::pupper()
 {
     return 0;
 }
+
+
 
 /*
  new UDT 4:
@@ -206,6 +217,7 @@ struct Puppy
     ~Puppy()
     {
         std::cout << "Puppy died of dysentery" << std::endl;
+        std::cout << " " << std::endl; //spacer
     }
 
     Dog puppyWeight;
@@ -215,6 +227,8 @@ void printPuppy()
 {
     Puppy puppy;
 }
+
+
 
 /*
  new UDT 5:
@@ -239,24 +253,48 @@ void printGuitarChord()
     GuitarChord guitarChord;
 }
 
+
+
 #include <iostream>
 int main()
 {
     example::main();
-    std::cout << "Print:" << std::endl;;
+    std::cout << "Print:" << std::endl;
+    std::cout << " " << std::endl; //spacer
     
     Guitar g;
     g.printGuitar();
+    g.tuning();
+    g.guitarFunc();
 
-    GuitarChord chord;
-    std::cout << "Guitar Playing" << std::endl;
+    std::cout << "Guitar function is active for the " << g.steelNeck + 1 << " scale degree with " << g.inTune << "Hz at Octave " << g.tuneKey << std::endl;
+
+    GuitarChord guitarChord;
+    std::cout << "Guitar Playing Ended" << std::endl;
+    std::cout << " " << std::endl; //spacer
     
     NeuroPath n;
     n.printNeuroPath();
+    n.thinking();
+    n.neuroFunc();
+
+    std::cout << "Cognitive Ability is at " << n.neuroPlasticity << "%" << " with an IQ of " << n.genericThought / 4 << std::endl;
+
+    std::cout << "End of Brain Data" << std::endl;
+
+    std::cout << " " << std::endl; //spacer
     
     Dog d;
     d.printDog();
+    d.makePuppies();
+    d.dogFunc();
+    
+    std::cout << "Dog is loading at " << d.manyPuppies + 100 << "% and is " << d.litter << "% ready to load puppies" << std::endl;
 
-    Puppy pup;
+    std::cout << "End of Dog Data" << std::endl;
+
+    std::cout << " " << std::endl; //spacer
+
+    Puppy puppy;
     std::cout << "Puppy was made" << std::endl;
 }
